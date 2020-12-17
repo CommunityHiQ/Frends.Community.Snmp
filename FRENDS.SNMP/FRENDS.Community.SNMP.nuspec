@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+	<metadata>
+		<id>FRENDS.Community.SNMP</id>
+		<version>1.0.24</version>
+		<title>FRENDS.Community.SNMP tasks</title>
+		<authors>HiQ Finland</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>FRENDS.Community.SNMP tasks</description>
+		<releaseNotes>Added SNMP v3 and v2</releaseNotes>
+		<copyright>Copyright 2020</copyright>
+		<tags>SNMP</tags>
+		<dependencies>
+			<group targetFramework=".NETFramework4.7.1">
+				<dependency id="Newtonsoft.Json" version="6.0.8" />
+				<dependency id="Lextm.SharpSnmpLib" version="12.2.0" />
+				<dependency id="SnmpSharpNet" version="0.9.5" />
+			</group>
+		</dependencies>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" />
+			<frameworkAssembly assemblyName="System.Data" />
+		</frameworkAssemblies>
+	</metadata>
+	<files>
+		<file src="bin\Release\FRENDS.Community.SNMP.dll" target="lib\net471\FRENDS.Community.SNMP.dll" />
+		<file src="bin\Release\FRENDS.Community.SNMP.pdb" target="lib\net471\FRENDS.Community.SNMP.pdb" />
+		<file src="bin\Release\Newtonsoft.Json.dll" target="lib\net471\Newtonsoft.Json.dll" />
+		<file src="bin\Release\Newtonsoft.Json.xml" target="lib\net471\Newtonsoft.Json.xml" />
+		<file src="bin\Release\SharpSnmpLib.dll" target="lib\net471\SharpSnmpLib.dll" />
+		<file src="bin\Release\SharpSnmpLib.pdb" target="lib\net471\SharpSnmpLib.pdb" />
+	</files>
+</package>
