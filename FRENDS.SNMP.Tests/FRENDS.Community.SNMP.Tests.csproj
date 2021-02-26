@@ -63,12 +63,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FRENDS.SNMP\FRENDS.Community.SNMP.csproj">
-      <Project>{623e3be6-578f-4762-a8e6-970afeb1d156}</Project>
-      <Name>FRENDS.Community.SNMP</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
