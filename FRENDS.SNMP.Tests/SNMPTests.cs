@@ -53,7 +53,7 @@ namespace FRENDS.Community.SNMP.Tests
                 var res = SNMPtasks.SNMPGETNEXT(input, option, new CancellationToken());
                 Assert.Fail("An exception should have been thrown");
             }
-            catch (Lextm.SharpSnmpLib.Messaging.TimeoutException te)
+            catch (Lextm.SharpSnmpLib.BouncyCastle.Messaging.TimeoutException te)
             {
                 Assert.AreEqual("Request timed out after 1000-ms.", te.Message);
             }

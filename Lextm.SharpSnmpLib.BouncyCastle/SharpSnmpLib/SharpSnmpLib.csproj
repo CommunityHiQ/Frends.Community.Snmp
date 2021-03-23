@@ -1,0 +1,67 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+  <PropertyGroup>
+    <AssemblyName>SharpSnmpLib.BouncyCastle</AssemblyName>
+    <RootNamespace>Lextm.SharpSnmpLib.BouncyCastle</RootNamespace>
+    <UseWPF>false</UseWPF>
+    <UseWindowsForms>false</UseWindowsForms>
+    <TargetFrameworks>netstandard2.0;net471</TargetFrameworks>
+    
+    <PackageId>Lextm.SharpSnmpLib.BouncyCastle</PackageId>
+    <Title>#SNMP Library</Title>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Authors>Malcolm Crowe,Lex Li,and other contributors.</Authors>
+    <Description>#SNMP (SharpSNMP) Library is an open source library for developers who target Microsoft .NET/Xamarin/Mono platforms. It's developed in C# and can be used for F#, VB.NET, Oxygene, and more.
+Version with BouncyCastle support</Description>
+    <Summary>#SNMP (SharpSNMP) Library is an open source library for developers who target Microsoft .NET/Xamarin/Mono platforms. It's developed in C# and can be used for F#, VB.NET, Oxygene, and more. It supports .NET Framework 4.7.1 and above, as well as .NET Standard 2.0 and above.</Summary>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://docs.sharpsnmp.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lextudio/sharpsnmplib.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PackageReleaseNotes>https://github.com/lextudio/sharpsnmplib/releases</PackageReleaseNotes>
+    <Copyright>All rights reserved. (c) 2008-2020 Malcolm Crowe, Lex Li, and other contributors.</Copyright>
+    <PackageTags>smi snmp mib</PackageTags>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>sharpsnmplib.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <AssemblyVersion>12.3.1.0</AssemblyVersion>
+    <FileVersion>12.3.1.0</FileVersion>
+    <Version>12.3.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RuntimeIdentifier Condition=" '$(TargetFramework)' == 'net471' ">win</RuntimeIdentifier>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <AndroidUseIntermediateDesignerFile>False</AndroidUseIntermediateDesignerFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Samples.BouncyCastle\**" />
+    <EmbeddedResource Remove="Samples.BouncyCastle\**" />
+    <None Remove="Samples.BouncyCastle\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net471'">
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'xamarin.ios10'">
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.10">
+      <IncludeAssets>All</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

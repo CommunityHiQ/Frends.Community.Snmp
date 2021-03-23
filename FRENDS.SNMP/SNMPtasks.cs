@@ -1,6 +1,6 @@
-﻿using Lextm.SharpSnmpLib;
-using Lextm.SharpSnmpLib.Messaging;
-using Lextm.SharpSnmpLib.Security;
+﻿using Lextm.SharpSnmpLib.BouncyCastle;
+using Lextm.SharpSnmpLib.BouncyCastle.Messaging;
+using Lextm.SharpSnmpLib.BouncyCastle.Security;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -124,13 +124,28 @@ namespace FRENDS.Community.SNMP
                             priv = new TripleDESPrivacyProvider(new OctetString(options.PrivacyPassword), auth);
                             break;
                         case PrivacyProtocol.AES:
-                            priv = new AESPrivacyProvider(new OctetString(options.PrivacyPassword), auth);
+                            if (AESPrivacyProvider.IsSupported)
+                            {
+                                priv = new AESPrivacyProvider(new OctetString(options.PrivacyPassword), auth);
+                            }
+                            else
+                                priv = new Samples.BouncyCastle.BouncyCastleAESPrivacyProvider(new OctetString(options.PrivacyPassword), auth);                           
                             break;
                         case PrivacyProtocol.AES192:
-                            priv = new AES192PrivacyProvider(new OctetString(options.PrivacyPassword), auth);
+                            if (AESPrivacyProvider.IsSupported)
+                            {
+                                priv = new AES192PrivacyProvider(new OctetString(options.PrivacyPassword), auth);
+                            }
+                            else
+                                priv = new Samples.BouncyCastle.BouncyCastleAES192PrivacyProvider(new OctetString(options.PrivacyPassword), auth);                            
                             break;
                         case PrivacyProtocol.AES256:
-                            priv = new AES256PrivacyProvider(new OctetString(options.PrivacyPassword), auth);
+                            if (AESPrivacyProvider.IsSupported)
+                            {
+                                priv = new AES256PrivacyProvider(new OctetString(options.PrivacyPassword), auth);
+                            }
+                            else
+                                priv = new Samples.BouncyCastle.BouncyCastleAES256PrivacyProvider(new OctetString(options.PrivacyPassword), auth);                            
                             break;
                     }
 
