@@ -20,7 +20,7 @@ https://www.myget.org/F/frends-community/api/v3/index.json and in Gallery view i
 
 ## SNMPGETNEXT
 
-Get information from device with SNMP
+Get information from device with SNMP. Get next fetches the next values from OId
 
 ### Parameters
 
@@ -54,6 +54,44 @@ Responses in JArray
 | Property | Type | Description | Example |
 | -------- | -------- | -------- | -------- |
 | Responses | `JObject` | Command response data | `{ "CPUFanSpeed": "2683", "CPUTemperature": "39", "SerialNumber": "1863554409" ... }` |
+
+## SNMPSINGLEGET
+
+Get information from device with SNMP. Get's the soignle value from Oid
+
+### Parameters
+
+| Property | Type | Description | Example |
+| -------- | -------- | -------- | -------- |
+| OIDs | `OIDMapping[]` | Oid array | `` |
+| OID | `string` | Oid | `1.3.6.1.4.1.7312.2468.1.1.1` |
+| Name | `string` | Name | `serialnumber` |
+| ByteMapping | `ByteMapping[]` | ByteMapping array | `` |
+| ByteName | `string` | ByteName | `Temperature` |
+| IsHexaDecimal | `boolean` | Is HexaDecimal | `true` |
+| IpAddress | `string` | Host IP address | `127.0.0.1` |
+| Port | `int` | Host port number | `161` |
+
+### Options
+
+| Property | Type | Description | Example |
+| -------- | -------- | -------- | -------- |
+| Timeout | `int` | Reader timeout in milliseconds | `6000` |
+| Community | `string` | Community name | `Samsung` |
+| SNMPVersion | `Enum{V3, V2, V1}` | Select the SNMP version | `V3` |
+| AuthenticationPassword | `string` | Authentication Password | `password` |
+| PrivacyPassword | `string` | Privacy Password | `password` |
+| AuthProtocol | `Enum{MD5, SHA1, SHA256}` | Authentication Protocol | `MD5` |
+| PrivacyProtocol | `Enum{DES, TripleDES, AES, AES192, AES256}` | Privacy Protocol | `DES` |
+
+### Returns
+
+Responses in JArray
+
+| Property | Type | Description | Example |
+| -------- | -------- | -------- | -------- |
+| Responses | `JObject` | Command response data | `{ "CPUFanSpeed": "2683", "CPUTemperature": "39", "SerialNumber": "1863554409" ... }` |
+
 
 # Building
 
